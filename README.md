@@ -5,3 +5,5 @@ This project fine-tunes the GPT2 model to generate synonyms to input words. The 
 In depth project descriptions are in the notebooks
 
 HELLO!
+
+i am a achicken
