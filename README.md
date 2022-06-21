@@ -1,4 +1,5 @@
-# GPT2 Synonym Generator (June 2020)
+June 2020
+# GPT2 Synonym Generator
 
 Most people have a small vocabulary that limits their writing quality. This project develops a model that generates synonyms of a given word to expand the user's vocab range. Refer to the README for a quick summary of the project and results, or view the notebooks for an in-depth description.
 
