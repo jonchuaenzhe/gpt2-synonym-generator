@@ -22,3 +22,51 @@ This model generates multiple synonyms of a user-input word by fine-tuning a GPT
 All the 8000 groups were then concatenated into a single string and saved in data/train_string.txt.
 
 ## GPT2 Finetuning
+
+A pre-trained GPT2 model was installed from https://pypi.org/project/gpt-2-simple/ and after setting up the environment and loading the model, the finetune function was called:
+
+```
+sess = gpt2.start_tf_sess()
+gpt2.finetune(sess,
+              dataset="data/train_string.txt",
+              model_name='345M',
+              steps=2500,
+              learning_rate = 2e-5,
+              restore_from='fresh'
+              )
+```
+
+Early stopping was employed to prevent the model from overfitting to the small fine-tuning set.
+
+## Synonym Generation
+
+Synonyms were generated from the trained model by using the prefix "given_word <|startgen|>", and running the generate function. The generation was truncated when the "<|endgen|>" token was encountered.
+
+```
+gpt2.generate(sess,
+              length=250,
+              temperature=0.7,
+              prefix=f"{word} <|startgen|>",
+              truncate='<|endgen|>'
+              )
+```
+
+## Results
+
+Some good results were generated from the test set:
+
+```
+brilliance <|startgen|> brilliancy luster lustre radiance exultation
+tribute <|startgen|> homage respect due thankfulness thank
+nurture <|startgen|> educate groom raise model
+disposition <|startgen|> attitude outlook
+```
+
+However, there were also some poor results:
+
+```
+auxiliary <|startgen|> auxiliary annunciate prophetic
+follow <|startgen|> ah! ahh! ahhh! ahh!
+```
+
+A fine-tuning set larger than the existing 8000 words (which is relatively small for NLP purposes) would likely lead to much better results.
