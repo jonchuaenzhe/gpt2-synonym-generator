@@ -5,8 +5,8 @@ Most people have a small vocabulary that limits their writing quality. This proj
 
 Below are some examples of synonyms generated from an unseen test set:
 ```
-brilliance <|startgen|> brilliancy luster lustre radiance exultation
-tribute <|startgen|> homage respect due thankfulness thank
+given word: brilliance, generated synonyms: brilliancy luster lustre radiance exultation
+given word: tribute, generated synonyms: homage respect due thankfulness thank
 ```
 
 ## GPT2 Background
