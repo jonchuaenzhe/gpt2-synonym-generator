@@ -1,7 +1,13 @@
 June 2020
 # GPT2 Synonym Generator
 
-Most people have a small vocabulary that limits their writing quality. This project develops a model that generates synonyms of a given word to expand the user's vocab range. Refer to the README for a quick summary of the project and results, or view the notebooks for an in-depth description.
+Most people have a small vocabulary that limits their writing quality. This project develops a model that generates synonyms of a given word to expand the user's vocab range. Refer to this README for a quick summary of the project and results, or view the notebooks for an in-depth description.
+
+Below are some examples of synonyms generated from an unseen test set:
+```
+brilliance <|startgen|> brilliancy luster lustre radiance exultation
+tribute <|startgen|> homage respect due thankfulness thank
+```
 
 ## GPT2 Background
 
